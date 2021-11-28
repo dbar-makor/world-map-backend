@@ -1,5 +1,4 @@
 import express from 'express';
-import path from 'path';
 
 import countriesRouter from './router/map';
 
