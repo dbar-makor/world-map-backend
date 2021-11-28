@@ -1,0 +1,3 @@
+interface IGetCountriesRequest { }
+
+export { IGetCountriesRequest };
