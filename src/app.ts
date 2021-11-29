@@ -1,24 +1,13 @@
 import express from 'express';
+import cors from 'cors';
 
 import countriesRouter from './router/map';
 
 const app: express.Application = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
-    res.setHeader('Access-Control-Allow-Origin', process.env.HTTP_ACCESS_IP);
-    res.setHeader(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-    );
-    res.setHeader(
-        'Access-Control-Allow-Methods',
-        'OPTIONS, GET, POST, PATCH, DELETE, PUT',
-    );
-    next();
-});
+app.use(cors());
 
 app.get(
     '/alive',
